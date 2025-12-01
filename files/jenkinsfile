@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+
+    triggers {
+        githubPush()     // GitHub webhook trigger
+    }
+
+    stages {
+
+        stage('Pull Latest Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Ankitapansare25/Static-Website.git'
+            }
+        }
+
+        stage('Deploy to EC2') {
+            steps {
+                sshagent(['node-app-key']) {
+                    sh '''
+                        ssh -o StrictHostKeyChecking=no ec2-user@<13.201.129.112> "
+                            sudo rm -rf /var/www/html/* &&
+                            sudo git clone https://github.com/Ankitapansare25/Static-Website.git /var/www/html &&
+                            sudo chown -R nginx:nginx /usr/share/nginx/html &&
+                            sudo chmod -R 755 /usr/share/nginx/html &&
+                            sudo systemctl restart nginx
+                        "
+                    '''
+                }
+            }
+        }
+    }
+    post {
+        success {
+            echo "✅ Deployment Successful"
+        }
+        failure {
+            echo "❌ Deployment Failed"
+        }
+    }
+}
