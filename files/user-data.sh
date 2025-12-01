@@ -14,7 +14,8 @@ systemctl enable nginx
 rm -rf /usr/share/nginx/html/*
 
 # Clone GitHub project 
-git clone https://github.com/Ankitapansare25/Static-Website.git /usr/share/nginx/html/
+git clone https://github.com/Ankitapansare25/Static-Website.git /tmp/site &&
+sudo cp -r /tmp/site/* /usr/share/nginx/html/
 
 # Set proper file permissions
 chown -R nginx:nginx /usr/share/nginx/html
