@@ -16,18 +16,19 @@ pipeline {
 
         stage('Deploy to EC2') {
             steps {
-                sshagent(['mumbai-key']) {
+                sshagent(['mumbai-key']) {  
                     sh '''
-                        ssh -o StrictHostKeyChecking=no ec2-user@3.110.221.17
-                        " 
+                        ssh -o StrictHostKeyChecking=no ec2-user@3.110.221.17  << 'EOF'
+                        
                           sudo rm -rf /usr/share/nginx/html/* &&
                             sudo git clone https://github.com/Ankitapansare25/Static-Website.git /tmp/site &&
                             sudo cp -r /tmp/site/* /usr/share/nginx/html &&
                             sudo chown -R nginx:nginx /usr/share/nginx/html &&
                             sudo chmod -R 755 /usr/share/nginx/html &&
                             sudo systemctl restart nginx
-                        "
-                    '''
+                    EOF
+                        
+                    ''' 
                 }
             }
         }
