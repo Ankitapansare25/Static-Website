@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy to EC2') {
             steps {
-                sshagent(['node-app-key']) {
+                sshagent(['mumbai-key']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no ec2-user@3.110.221.17
                          "
