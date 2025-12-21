@@ -18,7 +18,7 @@ pipeline {
     steps {
         sshagent(['mumbai-key']) {
             sh '''
-ssh -o StrictHostKeyChecking=no ec2-user@3.110.221.17 << 'EOF'
+ssh -o StrictHostKeyChecking=no ec2-user@43.204.102.239 << 'EOF'
 sudo rm -rf /usr/share/nginx/html/*
 sudo rm -rf /tmp/site
 sudo git clone https://github.com/Ankitapansare25/Static-Website.git /tmp/site
