@@ -31,8 +31,7 @@ EOF
         }
     }
 }
-
-    
+    }
     post {
         success {
             echo "✅ Deployment Successful"
@@ -42,4 +41,3 @@ EOF
         }
     }
     }
-}
