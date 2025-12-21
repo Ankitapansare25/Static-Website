@@ -41,3 +41,5 @@ EOF
             echo "❌ Deployment Failed"
         }
     }
+    }
+}
