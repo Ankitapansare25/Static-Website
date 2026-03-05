@@ -115,19 +115,7 @@ http://<EC2-Public-IP>
 
 ---
 
-## 📸 Screenshots (Add Here)
-
-- Terraform Apply Output
-- AWS VPC & EC2 Resources
-- Jenkins Build Success
-- Live Website Screenshot
-
----
-
 ## 👩‍💻 Author
 
 **Ankita Pansare**    
 
----
-
-⭐ If you like this project, give it a star!
