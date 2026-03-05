@@ -52,7 +52,7 @@ Developer → GitHub Push → Webhook Trigger → Jenkins → EC2 → Nginx → 
 ---
 
 ## 🛠️ Tech Stack
-
+---
 ### 🌍 Infrastructure
 - Terraform
 - AWS VPC
@@ -71,7 +71,7 @@ Developer → GitHub Push → Webhook Trigger → Jenkins → EC2 → Nginx → 
 ---
 
 ## ⚙️ Jenkins Pipeline Stages
-
+---
 ### 1️⃣ Pull Latest Code
 Clones the `main` branch from GitHub.
 
@@ -86,7 +86,7 @@ Clones the `main` branch from GitHub.
 ---
 
 ## 🌐 Access Website
-
+---
 After successful deployment:
 
 ```
@@ -104,7 +104,7 @@ http://<EC2-Public-IP>
 ---
 
 ## 🎯 Key Learning Outcomes
-
+---
 - Infrastructure as Code using Terraform
 - Custom VPC creation
 - EC2 provisioning
