@@ -29,12 +29,12 @@ terraform init
 terraform plan
 terraform apply
 terraform destroy
-
+```
 ---
 
+---
 ## 🔄 CI/CD Workflow
 
-```
 Developer → GitHub Push → Webhook Trigger → Jenkins → EC2 → Nginx → Live Website
 ```
 
