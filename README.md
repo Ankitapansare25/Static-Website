@@ -36,7 +36,7 @@ terraform destroy
 ## 🔄 CI/CD Workflow
 
 Developer → GitHub Push → Webhook Trigger → Jenkins → EC2 → Nginx → Live Website
-```
+
 
 ### Workflow Explanation:
 
@@ -91,8 +91,8 @@ After successful deployment:
 
 ```
 http://<EC2-Public-IP>
-```
 
+```
 ---
 
 ## 🔐 Security Configuration
